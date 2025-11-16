@@ -1,0 +1,47 @@
+[
+  {
+    "cep": "25225102",
+    "endereco": "Rua Cinquenta e Sete",
+    "bairro": "Fonseca",
+    "cidade": "Duque de Caxias",
+    "estado": "RJ",
+    "pais": "Brasil",
+    "dataHora": "2025-11-15T14:27:20.899Z"
+  },
+  {
+    "cep": "25225700",
+    "endereco": "Alameda dos Cajueiros",
+    "bairro": "Vila Actura",
+    "cidade": "Duque de Caxias",
+    "estado": "RJ",
+    "pais": "Brasil",
+    "dataHora": "2025-11-15T14:30:52.938Z"
+  },
+  {
+    "cep": "01310100",
+    "endereco": "Avenida Paulista",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "pais": "Brasil",
+    "dataHora": "2025-11-15T14:33:33.727Z"
+  },
+  {
+    "cep": "20040020",
+    "endereco": "Praça Pio X",
+    "bairro": "Centro",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "pais": "Brasil",
+    "dataHora": "2025-11-15T14:33:55.653Z"
+  },
+  {
+    "cep": "65910180",
+    "endereco": "Rua da Assembléia",
+    "bairro": "Vila Lobão",
+    "cidade": "Imperatriz",
+    "estado": "MA",
+    "pais": "Brasil",
+    "dataHora": "2025-11-15T14:41:03.097Z"
+  }
+]
