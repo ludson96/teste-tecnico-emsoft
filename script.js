@@ -115,26 +115,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Controla a visibilidade do formulário de endereço.
+     * Controla a visibilidade do formulário de endereço com animação de expandir/recolher.
      * @param {boolean} show - Define se o formulário deve ser exibido.
      */
     function showAddressForm(show) {
         if (show) {
             addressForm.classList.remove('d-none');
+            // Força o navegador a aplicar o 'display' antes de calcular a altura
+            requestAnimationFrame(() => {
+                addressForm.style.maxHeight = addressForm.scrollHeight + 'px';
+                addressForm.style.opacity = '1';
+                addressForm.style.transform = 'scaleY(1)';
+            });
         } else {
-            addressForm.classList.add('d-none');
+            addressForm.style.maxHeight = '0';
+            addressForm.style.opacity = '0';
+            addressForm.style.transform = 'scaleY(0.95)';
+            setTimeout(() => {
+                addressForm.classList.add('d-none');
+            }, 400); // Corresponde à duração da transição em CSS
         }
     }
 
     /**
-     * Controla a visibilidade do indicador de carregamento.
+     * Controla a visibilidade do indicador de carregamento com animação.
      * @param {boolean} show - Define se o loading deve ser exibido.
      */
     function showLoading(show) {
+        loading.classList.remove('fade-in', 'fade-out');
+    
         if (show) {
             loading.classList.remove('d-none');
+            loading.classList.add('fade-in');
         } else {
-            loading.classList.add('d-none');
+            loading.classList.add('fade-out');
+            setTimeout(() => {
+                loading.classList.add('d-none');
+            }, 500); // Duração da animação de fadeOut
         }
     }
 
@@ -144,6 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} type - O tipo de alerta (ex: 'success', 'danger').
      */
     function showFeedback(message, type) {
-        feedback.innerHTML = `<div class="alert alert-${type}" role="alert">${message}</div>`;
+        const feedbackAlert = `
+            <div class="alert alert-${type} fade-in" role="alert">
+                ${message}
+            </div>
+        `;
+        feedback.innerHTML = feedbackAlert;
     }
 });
